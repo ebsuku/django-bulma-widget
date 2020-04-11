@@ -1,0 +1,11 @@
+{% for f in form %}
+    <div class="field">
+	<label class="label">
+	    {{f.label_tag}}
+	</label>
+	<small>{{f.help_text}}</small>
+	<div class="control is-expanded">
+	    {{f}}
+	</div>
+    </div>
+{% endfor %}
