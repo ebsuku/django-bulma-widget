@@ -1,0 +1,22 @@
+{% if messages %}
+    {% for message in messages %}
+	{% if message.tags == 'success' %}
+	    <div class="notification is-success" style=display:block" id="messageDialog">
+		<button class="delete messageClose"></button>
+		<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+	    </div>
+	{% elif messages.tags == 'error' %}
+	    <div class="notification is-danger"  style=display:block" id="messageDialog">
+		<button class="delete messageClose"></button>
+		<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+	    </div>
+	{% endif %}
+    {% endfor %}
+{% else %}
+    <div id="messageDialog"></div>
+{% endif %}
+<script defer type="application/javascript">
+ $('.messageClose').click(function(){
+    $('.notification').css('display','none'); 
+ });
+</script>

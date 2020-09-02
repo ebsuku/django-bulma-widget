@@ -1,0 +1,12 @@
+{% if form.errors %}
+    <div class="notification is-danger">
+	{{ form.non_field_errors }}
+	<ul>
+	    {% for field in form %}
+		{% if field.errors %}
+		    {{field.errors}}
+		{% endif %}
+	    {% endfor %}
+	</ul>
+    </div>
+{% endif %}
